@@ -62,6 +62,8 @@ b) (5 pts) Propón cómo segregar esta interfaz:
 
 
 Interface 1: IAgregarLibro  -   Métodos: agregar_libro()
+
 Interface 2: IBuscarLibro  -  Métodos: buscar_libro()
+
 Interface 3: IPrestamo     -  Métodos: realizar_prestamo()
 
