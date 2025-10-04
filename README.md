@@ -40,9 +40,11 @@ class Bicicleta(Vehiculo):
 
 
 # Explicación:
+
 En este caso, la subclase Bicicleta está violando el principio LSP. Aunque Bicicleta hereda de Vehiculo, no puede sustituir a Vehiculo de manera transparente porque lanza una excepción cuando se invoca el método arrancar(), mientras que la clase base Vehiculo y la subclase Coche no lo hacen. Esto crea una inconsistencia en el comportamiento y viola el principio LSP, ya que una instancia de Vehiculo no puede ser reemplazada de manera transparente por Bicicleta sin alterar el comportamiento esperado.
 
 Pregunta 2: ISP (5 pts)
+
 a) (5 pts) ¿Por qué esta interfaz VIOLA ISP?
 class IGestionBiblioteca:
     def agregar_libro(self): pass
@@ -52,10 +54,13 @@ class IGestionBiblioteca:
     def hacer_backup(self): pass
 
 Respuesta:
+
 Esta interfaz viola el Interface Segregation Principle (ISP) porque está obligando a las clases que la implementan a depender de métodos que no utilizan. Por ejemplo, una clase que solo se encargue de agregar libros no debería verse obligada a implementar los métodos de generar_reporte o hacer_backup, ya que no son necesarios para su funcionalidad. Según ISP, las interfaces deben ser específicas para que las clases solo implementen los métodos que realmente necesita, evitando que se vean obligadas a implementar funcionalidades innecesarias.
 
 
 b) (5 pts) Propón cómo segregar esta interfaz:
+
+
 Interface 1: IAgregarLibro  -   Métodos: agregar_libro()
 Interface 2: IBuscarLibro  -  Métodos: buscar_libro()
 Interface 3: IPrestamo     -  Métodos: realizar_prestamo()
